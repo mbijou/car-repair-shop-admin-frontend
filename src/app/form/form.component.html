@@ -1,0 +1,16 @@
+<form [formGroup]="form" *ngIf="form" (ngSubmit)="onSubmit(form.value, form, service)">
+  <div *ngFor="let field of fields | keyvalue">
+    <div *ngIf="field.value.type === 'string'" class="form-group">
+      <label [attr.for]="field.key">
+        {{ field.value.label }}
+      </label>
+      <input [attr.id]="field.key" type="text" [attr.placeholder]="field.value.label" [formControlName]="field.key"
+             class="form-control col-4"/>
+      <p *ngIf="error">{{ error[field.key] }}</p>
+      <ul *ngIf="form.controls[field.key].errors" class="error-list">
+        <li *ngFor="let kv of form.controls[field.key].errors | keyvalue">{{kv.key}} : {{kv.value}}</li>
+      </ul>
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit">Speichern</button>
+</form>
