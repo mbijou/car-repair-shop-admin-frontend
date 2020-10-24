@@ -23,7 +23,7 @@ import { FormComponent } from './form/form.component';
     ReactiveFormsModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: CompanyComponent },
+      { path: 'company', component: CompanyComponent },
     ])
   ],
   providers: [],
