@@ -19,16 +19,21 @@ export class CompanyFormComponent implements OnInit {
     public companyService: CompanyService,
     private formBuilder: FormBuilder
   ) {
-    companyService.getCompanyOptions().subscribe(data => {
-      this.setFields(data);
+    this.companyService.getCompanyData().subscribe(data => {
+      this.companyService.companyData = data;
 
-      let formJSON = CompanyFormComponent.buildFormJSON(this.fields);
+      companyService.getCompanyOptions().subscribe(data => {
+        this.setFields(data);
 
-      console.warn("hey", formJSON);
+        let formControls = this.buildFormControls();
 
-      this.companyForm = this.formBuilder.group(
-        formJSON,
-      );
+        this.setFormControlsInitialValues(formControls, companyService.companyData);
+
+        this.companyForm = this.formBuilder.group(
+          formControls,
+        );
+
+      });
 
     });
   }
@@ -42,15 +47,32 @@ export class CompanyFormComponent implements OnInit {
       console.warn(this.fields);
   }
 
-  static buildFormJSON(fields): object{
-      let formJSON = {};
+  buildFormControls(): object{
+      let formControls = {};
+      let formControl;
 
-      for(let field in fields){
-        if (fields.hasOwnProperty(field)) {
-          formJSON[field] = new FormControl(field, [/*Validators.required*/]);
+      for(let field in this.fields){
+        if (this.fields.hasOwnProperty(field)) {
+          formControl = new FormControl(field, [/*Validators.required*/]);
+          formControls[field] = formControl;
+          formControl.setValue(null);
         }
       }
-      return formJSON;
+
+      return formControls;
+  }
+
+  setFormControlsInitialValues(formControls, companyData){
+      let formControl;
+      for(let field in this.fields){
+        if (this.fields.hasOwnProperty(field)) {
+          formControl = formControls[field];
+          if(companyData.hasOwnProperty(field)){
+            console.warn("bro", companyData);
+            formControl.setValue(companyData[field]);
+          }
+        }
+      }
   }
 
   onSubmit(formData, companyForm, companyService) {

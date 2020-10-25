@@ -10,6 +10,7 @@ import { CompanyFormComponent } from './company-form/company-form.component';
 import { FormComponent } from './form/form.component';
 import { SidebarNavigationComponent } from './sidebar-navigation/sidebar-navigation.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { TopbarNavigationComponent } from './topbar-navigation/topbar-navigation.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     FormComponent,
     SidebarNavigationComponent,
     DashboardComponent,
+    TopbarNavigationComponent,
   ],
   imports: [
     BrowserModule,

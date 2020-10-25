@@ -1,12 +1,12 @@
 <div class="sidebar" data-color="black" data-active-color="danger">
   <div class="logo">
-    <a href="" class="simple-text logo-mini">
+    <a [routerLink]="['/']" class="simple-text logo-mini">
       <div class="logo-image-small">
         <img src="assets/paper-dashboard/img/logo-small.png">
       </div>
       <!-- <p>CT</p> -->
     </a>
-    <a href="" class="simple-text logo-normal">
+    <a [routerLink]="['/']" class="simple-text logo-normal">
       Adminbereich
       <!-- <div class="logo-image-big">
         <img src="../assets/img/logo-big.png">
@@ -24,7 +24,7 @@
       <li [routerLinkActive]="['active']">
         <a [routerLink]="['company/']">
           <i class="nc-icon nc-single-02"></i>
-          <p>Firma</p>
+          <p>Firmenstammdaten</p>
         </a>
       </li>
     </ul>
