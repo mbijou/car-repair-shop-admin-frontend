@@ -8,6 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CompanyComponent } from './company/company.component';
 import { CompanyFormComponent } from './company-form/company-form.component';
 import { FormComponent } from './form/form.component';
+import { SidebarNavigationComponent } from './sidebar-navigation/sidebar-navigation.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -16,6 +18,8 @@ import { FormComponent } from './form/form.component';
     CompanyComponent,
     CompanyFormComponent,
     FormComponent,
+    SidebarNavigationComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,6 +27,7 @@ import { FormComponent } from './form/form.component';
     ReactiveFormsModule,
     FormsModule,
     RouterModule.forRoot([
+      { path: '', component: DashboardComponent},
       { path: 'company', component: CompanyComponent },
     ])
   ],
