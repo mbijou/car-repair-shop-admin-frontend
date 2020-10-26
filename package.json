@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build --deploy-url=/static/dist/frontend/ --prod --output-hashing none --vendor-chunk=true --extract-css=false",
+    "start": "ng serve --proxy-config src/proxy.conf.json",
+    "build": "ng build --deploy-url /static/dist/frontend/admin/ --base-href /admin/ --prod --output-hashing none --vendor-chunk true --extract-css false",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

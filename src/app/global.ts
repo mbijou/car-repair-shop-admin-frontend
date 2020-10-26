@@ -1,1 +1,1 @@
-export const deployUrl = '/static/dist/frontend/';
+export const deployUrl = '/static/dist/frontend/admin/';
