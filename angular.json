@@ -25,6 +25,7 @@
             ],
             "styles": [
               "src/styles.css",
+              "src/styles.scss",
               "node_modules/bootstrap/scss/bootstrap.scss",
               "src/assets/paper-dashboard/scss/paper-dashboard.scss"
             ],

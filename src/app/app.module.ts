@@ -11,6 +11,7 @@ import { FormComponent } from './form/form.component';
 import { SidebarNavigationComponent } from './sidebar-navigation/sidebar-navigation.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TopbarNavigationComponent } from './topbar-navigation/topbar-navigation.component';
+import * as angularJSON from '../../angular.json';
 
 
 @NgModule({
