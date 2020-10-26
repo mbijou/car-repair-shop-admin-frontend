@@ -12,6 +12,7 @@ import { SidebarNavigationComponent } from './sidebar-navigation/sidebar-navigat
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TopbarNavigationComponent } from './topbar-navigation/topbar-navigation.component';
 import * as angularJSON from '../../angular.json';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 @NgModule({
