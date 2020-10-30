@@ -1,0 +1,32 @@
+<div class="sidebar" data-color="black" data-active-color="danger">
+  <div class="logo">
+    <a [routerLink]="['/']" class="simple-text logo-mini">
+      <div class="logo-image-small">
+        <img src="{{ deployUrl }}assets/paper-dashboard/img/logo-small.png">
+      </div>
+      <!-- <p>CT</p> -->
+    </a>
+    <a [routerLink]="['/']" class="simple-text logo-normal">
+      Adminbereich
+      <!-- <div class="logo-image-big">
+        <img src="../assets/img/logo-big.png">
+      </div> -->
+    </a>
+  </div>
+  <div class="sidebar-wrapper">
+    <ul class="nav">
+      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+        <a [routerLink]="['/']">
+          <i class="nc-icon nc-bank"></i>
+          <p>Dashboard</p>
+        </a>
+      </li>
+      <li [routerLinkActive]="['active']">
+        <a [routerLink]="['company/']">
+          <i class="nc-icon nc-single-02"></i>
+          <p>Firmenstammdaten</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
